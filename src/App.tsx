@@ -45,6 +45,9 @@ function App() {
       </div>
       <p className="read-the-docs s-text">
         Click on the Vite and React logos to learn more
+        <br/>
+        
+        Click on the Vite and React logos to learn more
       </p>
       <Skeleta loading={loading}/>
     </div>

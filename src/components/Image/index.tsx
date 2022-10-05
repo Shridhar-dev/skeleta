@@ -1,4 +1,4 @@
-import "./index.css";
+import styles from "../index.module.css";
 import config from "../../../skeleta.config"
 
 function Image({element}:any) {
@@ -12,14 +12,14 @@ function Image({element}:any) {
         background: config.image?.bgColor || config.bgColor || "white",
         borderRadius: config.image?.borderRadius || "0.5rem",
       }}
-      className="outer__skeleta">
+      className={styles.outer__skeleta}>
         <div 
           style={{
             width:rect.width-20, 
             height:rect.height-20, 
             minHeight:"20px"
           }}
-          className="inner__skeleta">
+          className={styles.inner__skeleta}>
         </div>
       </div>
   )
