@@ -1,21 +1,12 @@
 
 import styles from "../index.module.css";
 import config from "../../../skeleta.config"
-
+import { getNoOfLines } from "../utils";
 
 function Text({element}:any) {
   let rect = element.getBoundingClientRect();
-  
   let h = parseInt(getComputedStyle(element).fontSize.slice(0,getComputedStyle(element).fontSize.length-2))
-  const copy = element.cloneNode();
-  copy.style.visibility = 'hidden';
-  copy.style.position = 'absolute';
-  copy.textContent = 'a';
-  element.parentNode.appendChild(copy);
-  const lineHeight = copy.offsetHeight;
-  const linesCount = Math.round(element.offsetHeight / lineHeight);
-  element.parentNode.removeChild(copy); 
-  
+  let linesCount = getNoOfLines(element);
 
   return (
     <div 
@@ -38,7 +29,8 @@ function Text({element}:any) {
                   height:h, 
                   border:"5px solid "+ (config.text.bgColor || config.bgColor || "white")
                 }}
-                className={styles.inner__skeleta}>
+                className={`${styles.inner__skeleta} ${styles.fade}`}
+                >
               </div>
             )
           })

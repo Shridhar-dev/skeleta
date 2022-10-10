@@ -3,17 +3,25 @@
     height: 100%;
     display: block;
     border-radius:inherit;
-    background: linear-gradient(
+
+}
+
+.ltr{
+  background: linear-gradient(
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 1) 100%,
         rgba(255, 255, 255, 0) 80%
       ),
       rgb(170, 170, 170);
-    background-repeat: repeat-y;
-    background-size: 50px 500px;
-    background-position: 0 0;
-    animation: shine 1s infinite;
-  }
+  background-repeat: repeat-y;
+  background-size: 50px 500px;
+  background-position: 0 0;
+  animation: ltrLoader 1s infinite;
+}
+
+.fade{
+  animation: fadeLoader 1.5s infinite;
+}
 
   .outer__skeleta{
     position:absolute;
@@ -27,7 +35,20 @@
     flex-direction: column;
    }
 
-  @keyframes shine {
+  @keyframes fadeLoader {
+    0%{
+      background: rgb(170, 170, 170);
+    }
+    50% {
+      background: rgb(200, 200, 200);
+    }
+
+    100% {
+      background: rgb(170, 170, 170);
+    }
+  }
+
+  @keyframes ltrLoader {
     to {
       background-position: 100% 0;
     }

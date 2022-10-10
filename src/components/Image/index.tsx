@@ -19,7 +19,7 @@ function Image({element}:any) {
             height:rect.height-20, 
             minHeight:"20px"
           }}
-          className={styles.inner__skeleta}>
+          className={`${styles.inner__skeleta} ${styles.fade}`}>
         </div>
       </div>
   )
